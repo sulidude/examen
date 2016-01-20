@@ -1,0 +1,35 @@
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="todolist edit">
+  <h2>Update listitem</h2>
+
+  <%= form_for(:listitem, :url => {:action => 'update', :id => @listitem.id}) do |f| %>
+
+    <table summary="ListItem form fields">
+      <tr>
+        <th>ingaveDatum</th>
+        <td><%= f.text_field(:ingaveDatum) %></td>
+      </tr>
+      <tr>
+        <th>eindDatum</th>
+        <td><%= f.text_field(:eindDatum) %></td>
+      </tr>
+      <tr>
+        <th>prioriteit</th>
+        <td><%= f.text_field(:prioriteit) %></td>
+      </tr>
+      <tr>
+        <th>beschrijving</th>
+        <td><%= f.text_area(:beschrijving) %></td>
+
+      </tr>
+
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update List Item") %>
+    </div>
+
+  <% end %>
+</div>
