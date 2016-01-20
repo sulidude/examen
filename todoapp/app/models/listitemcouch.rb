@@ -20,7 +20,7 @@ class Listitemcouch < CouchRest::Model::Base
      :map =>
        "function(doc) {
          emit(doc.prioriteit, doc);
-         
+
        }"
 
  end
