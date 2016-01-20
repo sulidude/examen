@@ -53,6 +53,11 @@ GEM
       mime-types (>= 1.15)
       multi_json (~> 1.7, ~> 1.0)
       rest-client (~> 1.8.0)
+    couchrest_model (2.0.4)
+      activemodel (>= 4.0, >= 3.0)
+      couchrest (~> 1.2.1)
+      mime-types (>= 1.16)
+      tzinfo (>= 0.3.22)
     debug_inspector (0.0.2)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
@@ -161,6 +166,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   couchrest
+  couchrest_model
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.5)

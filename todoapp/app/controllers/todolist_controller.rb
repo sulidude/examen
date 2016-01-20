@@ -17,6 +17,16 @@ class TodolistController < ApplicationController
     @listitemcouch.save
   end
 
+  def filter
+    listitemscouch = Listitemcouch.by_prioriteit
+    @list = []
+    listitemscouch.each do |listitem|
+      if listitem.prioriteit.to_i == params[:id].to_i
+        @list.push(listitem)
+      end
+    end
+  end
+
   private
 
     def listitem_params

@@ -1,8 +1,8 @@
 require 'rubygems'
-require 'couchrest'
+require 'couchrest_model'
 
 SERVER = CouchRest.new
-DB     = SERVER.database!('contact-manager')
+DB     = SERVER.database!('todoapp')
 
 class Listitemcouch < CouchRest::Model::Base
   use_database DB
@@ -14,6 +14,14 @@ class Listitemcouch < CouchRest::Model::Base
   property :status
   timestamps!
 
-  view_by :prioriteit
 
+  design do
+   view :by_prioriteit,
+     :map =>
+       "function(doc) {
+         emit(doc.prioriteit, doc);
+         
+       }"
+
+ end
 end
